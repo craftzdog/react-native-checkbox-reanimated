@@ -1,31 +1,38 @@
-import * as React from 'react';
-
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-checkbox-reanimated';
+import React, { useState } from 'react'
+import { StyleSheet, View, Pressable } from 'react-native'
+import AnimatedCheckbox from 'react-native-checkbox-reanimated'
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [checked, setChecked] = useState<boolean>(false)
 
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  const handleCheckboxPress = () => {
+    setChecked(prev => {
+      return !prev
+    })
+  }
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Pressable onPress={handleCheckboxPress} style={styles.checkbox}>
+        <AnimatedCheckbox
+          checked={checked}
+          highlightColor="#4444ff"
+          checkmarkColor="#ffffff"
+          boxOutlineColor="#4444ff"
+        />
+      </Pressable>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});
+  checkbox: {
+    width: 64,
+    height: 64
+  }
+})
