@@ -41,13 +41,13 @@ const AnimatedCheckbox = (props: Props) => {
   const animatedBoxProps = useAnimatedProps(
     () => ({
       stroke: interpolateColor(
-        Easing.bezier(0.16, 1, 0.3, 1)(progress.value),
+        Easing.bezierFn(0.16, 1, 0.3, 1)(progress.value),
         [0, 1],
         [boxOutlineColor, highlightColor],
         'RGB'
       ),
       fill: interpolateColor(
-        Easing.bezier(0.16, 1, 0.3, 1)(progress.value),
+        Easing.bezierFn(0.16, 1, 0.3, 1)(progress.value),
         [0, 1],
         ['#00000000', highlightColor],
         'RGB'
