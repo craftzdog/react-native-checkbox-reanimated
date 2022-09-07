@@ -31,6 +31,8 @@ module.exports = {
 ```
 make sure the ```react-native-reanimated/plugin``` is added last.
 
+Please make sure that you give the [React Native Reanimated Documentation](https://docs.swmansion.com/react-native-reanimated/) a read.
+
 Please take note that in most cases while using this package with expo, the version of expo that you have installed will not be compatible with the latest version of the ```react-native-reanimated``` package and the ```react-native-svg``` package so if you get an error like so:
 ```sh
 Some dependencies are incompatible with the installed expo package version:
