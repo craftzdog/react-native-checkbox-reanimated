@@ -17,6 +17,33 @@ npm install react-native-checkbox-reanimated
 npm install react-native-reanimated react-native-svg
 ```
 
+When you're done installing `react-native-reanimated` don't forget to add the plugin to your `babel.config.js` file. Like so:
+```js
+module.exports = {
+  presets: [
+    ...
+  ],
+  plugins: [
+    ...
+    'react-native-reanimated/plugin',
+  ],
+};
+```
+make sure the `react-native-reanimated/plugin` is added last.
+
+Please make sure that you give the [React Native Reanimated Documentation](https://docs.swmansion.com/react-native-reanimated/) a read.
+
+Please take note that in most cases while using this package with expo, the version of expo that you have installed will not be compatible with the latest version of the `react-native-reanimated` package and the `react-native-svg` package so if you get an error like so:
+```sh
+Some dependencies are incompatible with the installed expo package version:
+  - react-native-reanimated - expected version: ~2.9.1 - actual version installed: 2.10.0
+  - react-native-svg - expected version: 12.3.0 - actual version installed: 13.1.0
+Your project may not work correctly until you install the correct versions of the packages.
+To install the correct versions of these packages, please run: expo doctor --fix-dependencies,
+or install individual packages by running expo install [package-name ...]
+```
+make sure you run the recommended `expo doctor --fix-dependencies` command to fix it and clear any errors you might have while using this package.
+
 ## Usage
 
 ```typescript
