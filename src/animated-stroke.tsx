@@ -21,6 +21,7 @@ const AnimatedStroke = ({ progress, ...pathProps }: AnimatedStrokeProps) => {
   return (
     <AnimatedPath
       animatedProps={animatedProps}
+      fill="none"
       // @ts-ignore
       onLayout={() => setLength(ref.current!.getTotalLength())}
       // @ts-ignore
